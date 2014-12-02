@@ -2,7 +2,7 @@
 layout: event
 category: event
 title: Maptime Roma December Meetup
-rsvp: http://meetup.com
+rsvp: https://www.eventbrite.it/e/maptime-rome-chapter-primo-incontro-tickets-14709256783
 ---
 
 Tuesday, Dec 09 2014, 6PM

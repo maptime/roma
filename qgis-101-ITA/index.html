@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <title>QGIS - INTRO</title>
+  <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+  <meta name="author" content="Hakim El Hattab">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="css/reveal.min.css">
+  <link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+  <link href="font-awesome/4.2.0/css/font-awesome.min.css">
+
+  <!-- For syntax highlighting -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+  <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+  <script>
+  if( window.location.search.match( /print-pdf/gi ) ) {
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = 'css/print/pdf.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  }
+  </script>
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-transition="fade" data-background="https://lh6.googleusercontent.com/-Z4PhvXOSPes/VFOSfEiOznI/AAAAAAAAAWA/fcSq0J0UUNE/w1977-h946/qgis26_brighton1.png"style="background: rgba(100,100,100,0.9)">
+        <h1>Introduzione a QGIS<br>Fare una mappa</h1>
+        <a class="citation" href="http://github.com/maptimeboston">Presentazione derivata da Maptime Boston</a>
+      </section>
+
+      <section>
+        <h2>Cos'&#233; QGIS?</h2>
+        <img src="https://lh6.googleusercontent.com/-Z4PhvXOSPes/VFOSfEiOznI/AAAAAAAAAWA/fcSq0J0UUNE/w1977-h946/qgis26_brighton1.png"/>
+
+      </section>
+
+      <section class="slide">
+        <p>&#201; un Software GIS Libero e Open Source</p>
+        <img src="images/i_love_open_source_sticker.png"/>
+        <p><a href="http://www.rahber.net/me/why-i-prefer-free-open-source-software/">rahber.net</a></p>
+
+      </section>
+
+      <section class="slide">
+        <p>Un progetto ufficiale di <a href="http://www.osgeo.org/">OSGEO</a><br>
+          Che funziona su</p>
+          <ul>
+            <li>Linux,</li>
+            <li>Unix,</li>
+            <li>Mac OSX,</li>
+            <li>Windows,</li>
+            <li>e Android</li>
+          </ul>
+
+        <p>Ha tutte le funzionalit&#224; necessarie, supporta vettori (points, lines, polygons) e raster</p>
+        </section>
+
+        <section class="slide">
+          <p>Rilasciato con licenza<br>
+            <a target="_blank" href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a></p>
+            <img src="images/gpl.png"/>
+          </section>
+
+          <section>
+            <p>Cos'&#233; OSGEO?</p>
+            <a target="_blank" href="http://www.gnu.org/copyleft/gpl.html"><img src="images/osgeo.png"/></a>
+
+              <p>l'acronimo di</p>
+                <a target="_blank" href="http://www.gnu.org/copyleft/gpl.html">Open Source Geospatial Foundation</a>
+                <p>Comunit&#224; che sviluppa<br>
+              QGIS, Grass, OpenLayers, etc.</p>
+            </section>
+
+            <section class="slides" style="background-position:center 350px">
+              <p>Storia di QGIS:</p>
+              <p>Iniziato nel 2002 da Gary Sherman<br>
+                Oggi siamo alla 2.6.1</p>
+                <img src="images/qgis_committers1.png"/>
+                <p><a class="citation" href="http://spatialgalaxy.net/2011/09/23/history-of-qgis-committers/" target="_blank">Gary Sherman - History of QGIS Committers (2011)</a></p>
+              </section>
+
+              <section>
+                <h2>Componenti di QGIS<h2>
+                <img src="https://lh6.googleusercontent.com/-Z4PhvXOSPes/VFOSfEiOznI/AAAAAAAAAWA/fcSq0J0UUNE/w1977-h946/qgis26_brighton1.png"/>
+                </p>
+              </section>
+
+              <section data-background="images/qgisdesktopscreenshot.jpg" style="background: rgba(100,100,100,0.9)">
+                <h2>QGIS Desktop<h2>
+              </section>
+
+              <section data-background="images/qgisbrowserscreenshot.png" style="background: rgba(100,100,100,0.9)">
+                <h2>QGIS Browser<h2>
+                </p>
+              </section>
+
+              <section data-background="images/qgisserverscreenshot.png" style="background: rgba(100,100,100,0.9)">
+                <h2>QGIS Server<h2>
+                </p>
+              </section>
+
+              <section data-background="images/qgiswebclientscreenshot.png" style="background: rgba(100,100,100,0.9)">
+                <h2>QGIS Web Client<h2>
+                </p>
+              </section>
+
+              <section data-background="images/qgisandroidscreenshot.jpg"style="background: rgba(100,100,100,0.9)">
+                <h2>QGIS for Android (beta)<h2>
+                  <p>su mobile! Testate a vostro rischio e pericolo</p>
+                </section>
+
+                <section>
+                  <h2>Facciamo una mappa!<h2>
+                    <p>Scaricate: <a target="_blank" href="https://www.qgis.org/en/site/forusers/download.html">QGIS 2.6</p></a>
+                  <img src="https://lh6.googleusercontent.com/-Z4PhvXOSPes/VFOSfEiOznI/AAAAAAAAAWA/fcSq0J0UUNE/w1977-h946/qgis26_brighton1.png"/>
+                </section>
+
+                  <section>
+                    <p>Creiamo una RAT MAP!<br>
+                      con <a target="_blank" href="https://data.cityofboston.gov/">Open Data Boston</a></p>
+                    <img src="images/rat-map.jpg"/>
+                  </section>
+
+                      <section>
+                        <H2>Conosciamo la GUI</H2>
+                        <img src="images/qgis-ui.png"/>
+                        </section>
+
+                      <section>
+
+                        <p>Map Navigation Toolbar</p>
+                        <img src="images/map-navigation.png"/>
+                      </section>
+
+                      <section>
+
+                        <p>File Toolbar</p>
+                        <img src="images/file-toolbar.png"/>
+                      </section>
+
+                      <section>
+                        <p>Layers</p>
+                        <img src="images/manage-layers.png"/>
+
+                      </section>
+
+                      <section>
+                        <p>Attribute Toolbar</p>
+                        <img src="images/attribute-toolbar.png"/>
+
+                      </section>
+
+                      <section>
+                        <p>Layers Panel</p>
+                        <img src="images/layers-panel.png"/>
+
+                      </section>
+
+                      <section>
+                        <p>Browser</p>
+                        <img src="images/browser-panel.png"/>
+
+                      </section>
+
+                      <section>
+                        <p>Le altre toolbar si attivano qui<br>View -> Toolbars</p>
+                        <img src="images/other-toolbars.png"/>
+
+                      </section>
+                      <section>
+                        <h2>Iniziamo</h2>
+                        <img src="images/rat-map.jpg"/>
+                      </section>
+
+                      <section>
+                        <h2>Aggiungi i Dati</h2>
+                        <img src="images/add-data.png"/>
+
+                      </section>
+
+                      <section>
+                        <p>Aggiungi <a target="_blank" href="maptime-qgis.zip">Data Package</a> che contiene:<br></p>
+                          <ul>
+                            <li>Quartieri di Boston</li>
+                          <li>Attività dei roditori (CSV)</li>
+                        </ul>
+
+                      </section>
+
+                      <section>
+                        <p>Che formati possiamo aggiungere?<br>
+                          tutti i vettoriali <a target="_blank" href="http://www.gdal.org/ogr_formats.html">OGR</a><br>
+                          tutti i formati Raster <a target="_blank" href="http://www.gdal.org/formats_list.html">GDAL</a><br>
+                          PostGIS, OracleSpatial, SpatialLite<br>
+                          Tabular (csv, tsv, etc.)</p>
+                          <img src="https://lh6.googleusercontent.com/-Z4PhvXOSPes/VFOSfEiOznI/AAAAAAAAAWA/fcSq0J0UUNE/w1977-h946/qgis26_brighton1.png"/>
+                        </section>
+
+                        <section>
+                          <p>Proiezioni<br>La proiezione di default è quella assegnata al progetto,<br>
+                            se non è definita, utilizza WGS84<br>Layers -> Individual basis<br>Project -> Project Properties</p>
+                          <img src="https://lh6.googleusercontent.com/-Z4PhvXOSPes/VFOSfEiOznI/AAAAAAAAAWA/fcSq0J0UUNE/w1977-h946/qgis26_brighton1.png"/>
+
+                        </section>
+
+                        <section>
+                          <p>Per cambiare la proiezione basta<br> fare click destro su Layer -> Save As</p>
+                          <img src="https://lh6.googleusercontent.com/-Z4PhvXOSPes/VFOSfEiOznI/AAAAAAAAAWA/fcSq0J0UUNE/w1977-h946/qgis26_brighton1.png"/>
+
+                        </section>
+
+                        <section>
+                          <p>Abilitare la proiezione di layer<br>
+                            'on the fly'</p>
+                          <img src="images/project-properties1.png"/>
+                        </section>
+
+                        <section>
+                          <h2>Assegna la simbologia</h2>
+                          <img src="images/added-data1.png"/>
+                        </section>
+
+                        <section>
+                          <p>Layer Properties</p>
+                          <img src="images/layer-properties1.png"/>
+                        </section>
+
+                        <section>
+                          <p>Symbolize in Style Tab</p>
+                          <img src="images/style-tab1.png"/>
+
+                        </section>
+
+                        <section>
+                          <p>Esplorate le altre propriet&#224;</p>
+                          <img src="images/properties-select1.png"/>
+
+                        </section>
+
+                        <section data-background="images/properties-select1.png" style="background: rgba(100,100,100,0.9)">
+                          <p>Labels<br/>Fields<br/>Display<br/>Actions<br/>Joins<br/>Diagrams<br/>Metadata</p>
+                        </section>
+
+                        <section>
+                          <h2>Editing</h2>
+                          <p><br/>Oggi non abbiamo tempo ma si pu&#242; FARE!</p>
+                          <img src="images/editing.png"/>
+                        </section>
+
+                        <section class="slide">
+                          <h2>Geoprocessing</h2>
+                          <img src="images/geoprocessing.png"/>
+                        </section>
+
+                        <section>
+                          <p>Vector Menu</p>
+                          <img src="images/geoprocessing.png"/>
+
+                        </section>
+
+                        <section>
+                          <p>Provate Points in Polygon<br>per calcolare quale quartiere ha il maggior numero di topi</p>
+
+                          <img src="images/geoprocessing.png"/>
+                        </section>
+
+                        <section>
+                          <p>Per esportare un Layer<br>Tasto destro -> Save as...<br>Mantiene la proiezione assegnata</p>
+
+                          <img src="images/export-data.png"/>
+                        </section>
+
+                        <section class="slide">
+                          <img src="images/map-before1.png"/>
+                        </section>
+
+                        <section>
+                          <h2>Print Composer</h2>
+                          <img src="images/map-before1.png"/>
+
+                        </section>
+
+                        <section>
+                          <p>Per fare una mappa in QGIS si utilizza il Print Composer</p>
+                          <img src="images/print-composer.png"/>
+
+                        </section>
+
+                        <section>
+                          <p>Aggiungete l'elemento mappa</p>
+                          <img src="images/add-map.png"/>
+
+                        </section>
+
+                        <section>
+                          <p>Create il layout della vostra mappa in Print Composer.<br>Aggiungendo:
+                            <ul>
+                              <li>Mappa,</li>
+                              <li>Legenda,</li>
+                              <li>Scala,</li>
+                              <li>Freccia del Nord,</li>
+                              <li>etc. etc.</li>
+                            </ul>
+                          </p>
+                            <p>Non c'è più tempo,<br>
+                              salvate le modifiche per tornare ad aggiornarla!</p>
+                        </section>
+
+                        <section>
+                          <p>Il layout di stampa</p>
+                          <img src="images/rat-map-layout1.png"/>
+                        </section>
+
+                        <section>
+                          <p>Soddisfatti?<br>
+                            Potete esportare:<br>
+                            immagine<br>PDF<br>SVG</p>
+                          <img src="images/export-image.png"/>
+
+                        </section>
+
+                        <section data-background="https://lh6.googleusercontent.com/-Z4PhvXOSPes/VFOSfEiOznI/AAAAAAAAAWA/fcSq0J0UUNE/w1977-h946/qgis26_brighton1.png"/ style="background: rgba(100,100,100,0.9)">
+                          <p>Altre caratteristiche:<br>Servizi di mappa<br>QGIS Server<br>Webmap<br>Python<br>Collegamenti ai Database</p>
+                        </section>
+
+                        <section>
+                          <h2>Plugins!</h2>
+                          <p>Un enorme vantaggio di QGIS<br>Migliaia di Plugins Open Source<br>Plugins -> Plug In Manager</p>
+
+                          <img src="images/plugins1.png"/>
+                        </section>
+
+                        <section data-background="https://lh6.googleusercontent.com/-Z4PhvXOSPes/VFOSfEiOznI/AAAAAAAAAWA/fcSq0J0UUNE/w1977-h946/qgis26_brighton1.png"/ style="background: rgba(100,100,100,0.9)">
+                          <h2>&#232; solo l'inizio...</h2>
+                        </section>
+        </div>
+      </section>
+      <script src="lib/js/head.min.js"></script>
+      <script src="js/reveal.min.js"></script>
+      <script>
+        // Full list of configuration options available here:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+          controls: true,
+          progress: true,
+          history: true,
+          center: true,
+          theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+          transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+          // Parallax scrolling
+          // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+          // parallaxBackgroundSize: '2100px 900px',
+          // Optional libraries used to extend on reveal.js
+          dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+          ]
+        });
+      </script>
+    </body>
+    </html>

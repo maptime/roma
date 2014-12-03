@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <title>MAPTIME ROMA - PRESETNAZIONE</title>
+  <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+  <meta name="author" content="Hakim El Hattab">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="css/reveal.min.css">
+  <link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+  <link href="font-awesome/4.2.0/css/font-awesome.min.css">
+
+  <!-- For syntax highlighting -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+  <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+  <script>
+  if( window.location.search.match( /print-pdf/gi ) ) {
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = 'css/print/pdf.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  }
+  </script>
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-transition="zoom">
+        <h1>BENVENUTI!</h1>
+        <img src="images/maptime_roma_logo.png" border="0"/>
+      </section >
+      <section data-transition="fade">
+        <h2>
+          Grazie alla<br> <a href="http://www.cittadellaltraeconomia.org/"> Citt&#224; dell'Altra Economia</a><br> che ospita questo evento!
+        </h2>
+      </section>
+      <section data-transition="fade">
+        <h2>
+          WI-FI: <br>
+          PW: <br>
+        </h2>
+        <br>
+        <p>Potete seguire la presentazione anche qui:<br>
+          <a target="_blank"
+          href="http://maptime.io/roma/maptime-intro"
+          style="font-size:48px">http://maptime.io/roma/maptime-intro</a>
+          <br>
+          <br>
+        </p>
+        <a href="http://maptimeboston.github.io/maptime-intro">Questa presentazione &#233; derivata da Maptime Boston</a>
+      </section>
+      <section data-transition="fade">
+        <h2>
+          Programma:</h2>
+          <p>
+            <ul>
+              <li>Cos'&#233; Maptime?</li>
+              <li>Un po' di storia</li>
+              <li>Perch&#233; un <i>local chapter</i>?</li>
+              <li>Presentazioni</li>
+              <li>Proposte</li>
+              <li>QGIS Workshop</li>
+            </ul>
+          </p>
+        </section>
+        <section data-transition="fade">
+          <h2>
+            Cos'&#233; Maptime?</h2>
+            <ul>
+              <li class="fragment">un' occasione per imparare, a tutti i livelli</li>
+              <li class="fragment">Un progetto flessibile, perch&#233; può ospitare workshops, progetti personali e comunitari</li>
+              <li class="fragment">ma anche strutturato, perch&#233; parte di una rete di supporto internazionale</li>
+              <li class="fragment">un momento d'incontro per la comunità</li>
+              <li class="fragment"> ma soprattutto...</li>
+            </ul>
+          </p>
+        </section>
+        <section data-transition="zoom" data-background="images/map.png" style="background: rgba(0,0,0,0.9)">
+          <h2>&#201; un momento per fare mappe!</h2>
+        </section>
+        <section data-transition="fade">
+          <h2>Cosa NON &#233; Maptime:</h2>
+          <ul>
+            <li>un momento per SOLI esperti</li>
+            <li>una vetrina per dimostrazioni commerciali</li>
+            <li>un momento per i litigi</li>
+            <li>un modo per far lavorare GRATIS</li>
+          </ul>
+        </section>
+        <section data-transition="fade">
+          <h2>Un po' di storia</h2>
+          <p>Ispirato dall'intervento di Alyssa Wright alla conferenza State of the Map US 2013<a href="http://vimeopro.com/openstreetmapus/state-of-the-map-us-2013/video/68098504">[1]</a>.<br>
+            <br>Nasce dalla voglia di realizzare mappe migliori, e dall'idea che per migliorare servisssero incontri settimanalmenti per dedicare del tempo alla produzione di mappe insieme.
+            <br><br>Il 18:30 del 13 Giugno 2013 nasceva Maptime a San Francisco<br>
+          </p>
+          <a href="http://www.maptime.io/about/">Da About Maptime</a>
+        </section>
+        <section data-transition="fade">
+          <h2>Si &#233; diffuso in tutto il Mondo</h2>
+          <iframe width="100%" height="500" src="http://maptime.github.io/maptime-bites/00004/"></iframe>
+          <a href="https://github.com/maptime/maptime-bites/tree/gh-pages/00004">https://github.com/maptime/maptime-bites/tree/gh-pages/00004</a>
+        </section>
+        <section data-transition="fade">
+          <h2>Perch&#233; un <i>local chapter</i>?</h2>
+          &#201; il luogo fisico dove tutto questo si concretizza.<br>
+          Le riunioni a cadenza regolare, ci danno la possibilità di incontrarci, discutere, imparare, approfondire argomenti
+          quali OpenStreetMap, l’uso dei Sistemi Informativi Geografici ed i
+          relativi tool Open Source necessari o completare progetti comunitari o personali.</p>
+        </section>
+        <section data-transition="fade">
+          <h2>Presentazioni:</h2>
+          <ul>
+            <li class="fragment">Luca Moiana - <a href="http://twitter.com/lucamoiana" target="_blank">@lucamoiana</a><br/></span></li>
+            <li class="fragment">Paolo Corti - <a href="http://twitter.com/capooti" target="_blank">@capooti</a><br/></span></li>
+          </ul>
+        </section>
+        <section data-transition="zoom">
+          <h2>VOI:</h2>
+          <ul>
+            <li>Nome</li>
+            <li>Di cosa ti occupi</li>
+            <li>Cosa ti aspetti da Maptime</li>
+          </ul>
+        </section>
+        <section data-transition="fade" data-background="http://maptime.io/chicago/learn-leaflet/images/maptime.gif" data-background-size="400px" data-background-repeat="repeat" data-background-color="#111" style="background: rgba(0,0,0,0.9)">
+          <h2>serve<br>
+            LA TUA PARTECIPAZIONE</h2>
+          </section>
+          <section data-transition="zoom">
+            <h2>Come?</h2>
+            <ul>
+              <li>organizzare prossimi incontri</li>
+              <li>trovare argomenti</li>
+              <li>proporsi come speaker</li>
+              <li>proporre progetti comunitari</li>
+              <li>migliorare il logo</li>
+              <li>contribuire al sito</li>
+              <li>...tutto quello che ti viene in mente</li>
+            </ul>
+          </section>
+          <section data-transition="fade">
+            <h2>Idee per il futuro:</h2>
+            <ul>
+              <li>introduzione a <a href="http://qgis.org">QGIS</a></li>
+              <li>presentazione di <a href="https://www.openstreetmap.org">OSM</a></li>
+              <li>raccogliere dati con <a href="http://overpass-turbo.eu/">OVERPASS</a></li>
+              <li>organizzare un <a href="http://missingmap.org">MAPATHON</a></li>
+              <li>realizzare un <a href="http://leafletjs.com/">WEBGIS</a></li>
+              <li>primi passi in <a href="http://postgis.net/">POSTGIS</a></li>
+            </ul>
+          </section>
+          <section data-transition="fade">
+            <p>inviate commenti e proposte <br><br> maptime.roma@gmail.com <br><br> @maptimeroma</p>
+          </section>
+        </div>
+      </div>
+      <script src="lib/js/head.min.js"></script>
+      <script src="js/reveal.min.js"></script>
+      <script>
+        // Full list of configuration options available here:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+          controls: true,
+          progress: true,
+          history: true,
+          center: true,
+          theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+          transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+          // Parallax scrolling
+          // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+          // parallaxBackgroundSize: '2100px 900px',
+          // Optional libraries used to extend on reveal.js
+          dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+          ]
+        });
+      </script>
+    </body>
+    </html>

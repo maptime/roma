@@ -19,5 +19,5 @@ Twitter: [@MaptimeRoma](http://twitter.com/MaptimeRoma)
 Organizers:
 
 - Luca Moiana [@lucamoiana](http://twitter.com/lucamoiana)
-- Paolo Corti
+- Paolo Corti [@capooti](http://twitter.com/capooti)
 

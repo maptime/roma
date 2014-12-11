@@ -11,9 +11,11 @@ Eccoci, questa è la foto del primo Maptime Roma:
 
 <br/>
 L'incontro è iniziato con la presentazione del progetto [Maptime](http://maptime.io/roma/intro-to-maptime-ITA/#/)
+
 e con l'introduzione a [QGIS](http://maptime.io/roma/qgis-101-ITA/#/)
 
-Un'ottima occasione per conoscerci e avviare il progetto.<br/>
+è stata l'occasione per conoscerci e avviare il progetto.<br/>
+
 La discussione ci ha portato a conoscere i vari membri e a parlare di [OSM](http://openstreetmap.it/)  e [Ninux](http://wiki.ninux.org/) .<br/>
 Grazie alla presenza di membri attivi della comunità OSM, il prossimo appuntamento è<br/> 
 

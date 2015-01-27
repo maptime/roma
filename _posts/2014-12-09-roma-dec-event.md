@@ -1,23 +1,25 @@
 ---
-layout: event
-category: event
-title: Maptime Roma December Meetup
-rsvp: https://www.eventbrite.it/e/maptime-rome-chapter-primo-incontro-tickets-14709256783
+layout: post
+category: post
+title: OS dalla A alla Z!
+published: false
 ---
 
-Tuesday, Dec 09 2014, 6PM
+Grande entusiasmo per OSM nel secondo meeting del gruppo
 
-Where we meet:
+![Maptime Roma Dic 2014](https://raw.githubusercontent.com/maptime/roma/gh-pages/img/dec_2014.JPG)
 
-- Città dell'Altra Ecomonia <a href="http://twitter.com/altraeconomia">@altraeconomia</a>
-- <a href="http://www.cittadellaltraeconomia.org/index.php?option=com_content&view=article&id=24&Itemid=176">Rione Testaccio, all'interno del Campo Boario dell'ex-Mattatoio</a>
-- ROMA
+<br/>
+L'introduzione è stata fatta da [Martin Koppenhöfer](http://https://twitter.com/dieterdreist)
+<br/>
 
-__Beginners are encouraged, and be sure bring your laptop.__
+Il focus della discussione è stata sull'[uso dei dati](http://wiki.openstreetmap.org/wiki/IT:Legal_FAQ) e sul funzionamento di [JOSM](https://josm.openstreetmap.de)<br/>
 
-Twitter: [@MaptimeRoma](http://twitter.com/MaptimeRoma)
-Organizers:
 
-- Luca Moiana [@lucamoiana](http://twitter.com/lucamoiana)
-- Paolo Corti [@capooti](http://twitter.com/capooti)
+__Prossimo appuntamento a Febbraio__ <br/>
 
+__PROPONI UN ARGOMENTO__ <br/>
+
+Iscrivetevi alla nostra [mailing list](https://groups.google.com/forum/#!forum/maptimeroma)
+
+Se ci sono problemi [mailto:maptime.roma@gmail.com scrivici]

@@ -4,6 +4,8 @@ category: post
 title: Siamo Partiti!
 ---
 
+Tuesday, Dec 09 2014, 6PM
+
 Eccoci, questa è la foto del primo Maptime Roma:
 
 ![Maptime Roma Dic 2014](https://raw.githubusercontent.com/maptime/roma/gh-pages/img/dec_2014.JPG)
@@ -17,7 +19,7 @@ e con l'introduzione a [QGIS](http://maptime.io/roma/resources/qgis-101-ITA/#/)
 è stata l'occasione per conoscerci e avviare il progetto.<br/>
 
 La discussione ci ha portato a conoscere i vari membri e a parlare di [OSM](http://openstreetmap.it/)  e [Ninux](http://wiki.ninux.org/) .<br/>
-Grazie alla presenza di membri attivi della comunità OSM, il prossimo appuntamento è<br/> 
+Grazie alla presenza di membri attivi della comunità OSM, il prossimo appuntamento è<br/>
 
 
 __GENNAIO con OSM dalla A alla Z__ <br/>
@@ -25,6 +27,3 @@ __GENNAIO con OSM dalla A alla Z__ <br/>
 __APERTO A TUTTI! PORTATE IL VOSTRO COMPUTER.__ <br/>
 
 Proponete una data: [doodle](http://doodle.com/a3rv5utkdc2bzkyp#table)
-
-
-

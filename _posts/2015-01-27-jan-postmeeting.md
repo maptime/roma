@@ -1,7 +1,7 @@
 ---
 layout: event
 category: event
-title: Maptime Roma December Meetup
+title: Maptime Roma January Meeting
 rsvp: https://maptimeroma-gennaio.eventbrite.it
 ---
 

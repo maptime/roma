@@ -10,9 +10,9 @@ Eccoci, questa è la foto del primo Maptime Roma:
 
 
 <br/>
-L'incontro è iniziato con la presentazione del progetto [Maptime](http://maptime.io/roma/intro-to-maptime-ITA/#/)
+L'incontro è iniziato con la presentazione del progetto [Maptime](http://maptime.io/roma/resources/intro-to-maptime-ITA/#/)
 
-e con l'introduzione a [QGIS](http://maptime.io/roma/qgis-101-ITA/#/)
+e con l'introduzione a [QGIS](http://maptime.io/roma/resources/qgis-101-ITA/#/)
 
 è stata l'occasione per conoscerci e avviare il progetto.<br/>
 

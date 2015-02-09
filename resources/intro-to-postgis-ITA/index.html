@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>POSTGIS INTRO - MAPTIME</title>
+
+    <meta name="description" content="A brief introduction to POSTGIS">
+    <meta name="author" content="Luca Moiana">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
+        <section data-transition="zoom">
+        <h1>POSTGIS INTRO</h1>
+        <img src="images/maptime_roma_logo.png" border="0"/>
+        </section >
+
+        <section data-transition="fade">
+        <h1>Connettetevi a</h1>
+        <h3>
+          WI-FI: SalaConvegni<br>
+          PW: SalaConvegni2012<br>
+        </h3>
+        <br>
+        <p>Potete seguire la presentazione anche <a target="_blank" href="http://maptime.io/roma/resources/intro-to-postgis-ITA" style="font-size:48px">ONLINE</a></p>
+        <p>Questo tutorial &#233; basato sul workshop di <a href:"www.buondlessgeo.com">Boundelssgeo</a></p>
+      </section>
+
+      <section data-transition="fade">
+        <h2>Programma:</h2>
+          <p>
+            <ul>
+              <li>Introduzione</li>
+              <li>Installazione</li>
+              <li>Creazione DB</li>
+              <li>Importare i dati</li>
+              <li>RICETTA</li>
+            </ul>
+          </p>
+        </section>
+        <section data-transition="fade">
+          <h2>un po' di storia</h2>
+          <p>
+        <ul>
+          <li class="fragment">Nei primi sistemi GIS i dati erano organizzati in file e software speciali li interpretavano e risiedevano sulla macchina dell'utente o dell'organizzazione;</li>
+          <li class="fragment">La seconda generazione di GIS inizia ad usare database relazionali, ma solo per archiviare la parte <em>non spaziale</em> del dato;</li>
+          <li class="fragment">Nella terza generazione, i database spaziali (come POSTGIS) trattano invece i dati spaziali direttamente come oggetto del DB.</br>
+          <b>cambiando la prospettiva da GIS centrica a DB centrica</b></li>
+        </ul>
+
+        </p>
+        </section>
+
+
+        <section data-transition="fade">
+          <h2>Cosa lo rende SPAZIALE?</h2>
+          <p>Un normale DB contiene stringhe, numeri e date</p>
+          <p>quelli spaziali contengono elementi <em>geografici</em></br>
+          gerarchi che ereditano attributi, metodi e funzioni.</p>
+          <img src="images/hierarchy.png">
+          <p></br><small>immagine dal sito boundlessgeo.com</small></p>
+        </section>
+
+
+        <section data-transition="fade">
+          <h2>DOWNLOAD e INSTALLAZIONE</h2>
+          <ul>
+            <li><a href="http://www.maptime.io/about/">LINUX</a></li>
+            <li><a href="http://www.maptime.io/about/">WINDOWS</a></li>
+            <li><a href="http://www.maptime.io/about/">OS X</a></li>
+          </ul>
+        </section>
+
+        <section data-transition="fade">
+          <section>
+          <h2>CREAZIONE DEL DB</h2>
+          <h4>PgAdmin</h4>
+          <p>PostgreSQL ha molteplici tool di amministrazione, il più comune è <a href:"http://www.pgadmin.org/">pgAdmin</a></p>
+        </section>
+
+        <section>
+              <img src="images/pgadmin_01.png">
+              </br><small>immagine dal sito boundlessgeo.com</small></p>
+        </section>
+
+        <section>
+              <img src="images/pgadmin_03.png">
+              </br><small>immagine dal sito boundlessgeo.com</small></p>
+                        </section>
+
+            <section>
+              <img src="images/pgadmin_02.png">
+              </br><small>immagine dal sito boundlessgeo.com</small></p>
+            </section>
+
+            <section>
+              <img src="images/pgadmin_04.png">
+              </br><small>immagine dal sito boundlessgeo.com</small></p>
+            </section>
+
+            <section data-transition="fade">
+              <p><img src="images/pgadmin_05.png">
+              </br><small>immagine dal sito boundlessgeo.com</small></p>
+            </section>
+
+          <section>
+            <ul>
+            <li>Enter the following query into the query text field to load the PostGIS spatial extension
+            </br><code>CREATE EXTENSION postgis;</code></li>
+            <li>Click the <b>Play</b> button in the toolbar (or press <b>F5</b>) to “Execute the query.”</li>
+            <li>Now confirm that PostGIS is installed by running a PostGIS function:
+            </br><code>SELECT postgis_full_version();</code></li>
+            </ul>
+          </section>
+        </section>
+
+      </section>
+
+        <section data-transition="fade">
+          <h2>IMPORTARE I DATI</h2>
+        </section>
+
+        <section data-transition="fade">
+          <h2>RICETTA</h2>
+        </section>
+
+        <section data-transition="zoom">
+          <h1>GRAZIE PER LA PARTECIPAZIONE</h1>
+
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Parallax scrolling
+        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        // parallaxBackgroundSize: '2100px 900px',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>

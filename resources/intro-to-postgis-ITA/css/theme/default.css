@@ -23,6 +23,13 @@ body {
   background: -ms-radial-gradient(center, circle cover, #555a5f 0%, #1c1e20 100%);
   background: radial-gradient(center, circle cover, #555a5f 0%, #1c1e20 100%);
   background-color: #2b2b2b; }
+  
+  body:after {
+content: url(../../images/maptime_roma_logo.png);
+position: fixed;
+bottom: 3.5em;
+left: 3.5em;
+box-shadow: 5px 5px 10px #000; }
 
 .reveal {
   font-family: "Lato", sans-serif;

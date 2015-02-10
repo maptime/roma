@@ -29,8 +29,7 @@ content: url(../../images/maptime_roma_logo.png);
 position: fixed;
 bottom: 3.5em;
 left: 3.5em;
-width: 100px;
-height: 100px;
+background-size: 60px 60px;
 }
 
 .reveal {

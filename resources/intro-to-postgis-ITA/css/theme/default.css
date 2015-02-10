@@ -27,7 +27,7 @@ body {
   body:after {
 content: url(../../images/maptime_roma_logo.png);
 position: fixed;
-bottom: 3.5em;
+top: 3.5em;
 left: 3.5em;
     height: 100px;
     width: 100px;

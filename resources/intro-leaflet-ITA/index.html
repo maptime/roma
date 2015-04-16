@@ -91,14 +91,16 @@
 					</h2>
 				</section>
 				</section>
+</section>
 <section>
 <h1>Step 1 - Prepariamo la pagina</h1>
-<p>Apriamo il file <code>index.html``.
-Per prima cosa andiamo a caricare la libreria Leaflet (file con estensione .js), insieme con il relativo foglio di stile (estensione .css).  
-Per fare questo aggiungiamo i link agli scripts necessari in fondo al file, ma prima della chiusura del</code>body<code>(cioè prima del tag</code></body>```) :</p>
+<p>Apriamo il file <code>index.html``.</br>
+Per prima cosa andiamo a caricare la libreria Leaflet (file con estensione .js), insieme con il relativo foglio di stile (estensione .css).</br>  
+Per fare questo aggiungiamo i link agli scripts necessari in fondo al file, ma prima della chiusura del <code>&lt;body&gt;</code>:</p>
 <pre><code>    &lt;script src=&rdquo;http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js&rdquo;&gt;&lt;/script&gt;
     &lt;link rel=&rdquo;stylesheet&rdquo; href=&rdquo;http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css&rdquo; /&gt;</code></pre>
-<p>Poi aggiungiamo il codice per definire lo stile della pagina e della mappa (dimensioni, posizione ecc..). Per fare questo usiamo un tag particolare <code>&lt;style&gt;&lt;/style&gt;</code>dentro cui mettere il codice. Questo tag ed il suo contenuto vanno messi all&rsquo;interno dell&rsquo;<code>&lt;header&gt;&lt;/header&gt;</code></p>
+<p>Poi aggiungiamo il codice per definire lo stile della pagina e della mappa (dimensioni, posizione ecc..).</br> 
+Per fare questo usiamo un tag particolare <code>&lt;style&gt;&lt;/style&gt;</code>dentro cui mettere il codice. Questo tag ed il suo contenuto vanno messi all&rsquo;interno dell&rsquo;<code>&lt;header&gt;&lt;/header&gt;</code></p>
 <pre><code>    body { margin:0; padding:0; }
     #map { position:absolute; top:0; bottom:0; width:100%; }
 </code></pre>

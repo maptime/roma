@@ -2,7 +2,6 @@
 layout: post
 category: post
 title: Vedovelle Vs. Nasoni una introduzione a Leaflet
-published: true
 ---
 
 Wednesday, Apr 29 2015, 6PM

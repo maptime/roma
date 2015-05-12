@@ -8,7 +8,7 @@ Wednesday, Apr 29 2015, 6PM
 
 Introduzione a Leafletjs ispirato alla presentazione di @MaptimeMilan
 
-![Vedovelle Vs Nasoni](https://maptime.io/roma/resources/intro-leaflet-ITA/index.html)
+[Vedovelle Vs Nasoni](https://maptime.io/roma/resources/intro-leaflet-ITA/index.html)
 
 __SCRIVICI PER PROPORRE UN ARGOMENTO__ <br/>
 

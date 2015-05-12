@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Maptime Roma - A Leaflet Intro</title>
+
+		<meta name="description" content="Introduzione a Leaflet per il Maptime Roma di Aprile, basata sull'intro di Maptime Milan">
+		<meta name="author" content="Luca Moiana">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Leafletjs</h1>
+					<p>
+						<small>Adattato da una presentazione di <a href="http://maptime.io/milan">Maptime Milan</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>Sommario</h2>
+					<ul>
+						<li>Cos'&#233; Leaflet.js?</li>
+						<li>Tutorial</li>
+					</ul>
+				</section>
+
+				<!-- Storia -->
+				<section>
+					<section>
+						<img data-src="./img/leaflet.jpg" alt="Leafletjs logo">
+					</section>
+				<section>
+					<p><quote>"una moderna libreria javascript open source usata per creare web-map, rilasciata nel 2011.<br>
+						Per desktop e mobile, supporta HTML 5 e CSS3.<br>
+						Usata da grandi siti web: Flickr, foursquare, Pinterest, craigslist, Data.gov, IGN, Wikimedia, OSM, Meetup, WSJ, Mapbox, CartoDB, GIS Cloud …<br>
+						Sviluppata da <a href="http://agafonkin.com/en/" target="_blank">Vladimir Agafonkin</a>"</quote></p>
+						<p>da <a href="http://en.wikipedia.org/wiki/Leaflet_%28software%29" target="_blank">wikipedia</a></p>
+				</section>
+				<section>
+					<p>vantaggi:</p>
+					<ul>
+						<li>Open Source (documentazione, supporto, ...)</li>
+						<li>Semplice</li>
+						<li>Leggera</li>
+						<li>Flessibile (shape file, geoJson, WMS, ...)</li>
+						<li>etc, etc, etc, ...</li>
+					</ul>
+				</section>
+			</section>
+
+				<!-- TUTORIAL -->
+				<section data-background="./img/tutorial.png">
+						<h1><SPAN STYLE="background-color: #C0C0C0">TUTORIAL</span></h1>
+					<h2><SPAN STYLE="background-color: #C0C0C0">Vedovelle Vs. Nasoni</span></h2>
+				</section>
+				<section>
+				<section>
+						<h2><h1>Step 1 <br> Prepariamo la pagina</h1></h2>
+				</section>
+
+				<section>
+						<p>Creiamo un file HTML, <a href="./files-step-by-step/index1.txt" target="_blank"><code>index.html</code></a><br>
+						Carichiamo la libreria Leaflet (file con estensione .js)<br>
+						<pre><code class='html'>
+&lt;script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"&gt;&lt;/script&gt;
+						</code></pre>
+						e il relativo foglio di stile (estensione .css)<br>
+						<pre><code class='html'>
+&lt;link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" /&gt;<br>
+						</code></pre>
+						Aggiungendo i link agli script necessari, nel <code>&lt;body&gt;</code></p>
+				</section>
+				<section>
+						<p>Poi definiamo lo stile della pagina e della mappa (dimensioni, posizione ecc..).<br>
+							all'interno dell'<code>&lt;header&gt;&lt;/header&gt;</code>, aggiungiamo il tag <code>&lt;style&gt;&lt;/style&gt;</code> in cui mettere il codice:<br>
+							</p>
+							<pre><code class='html'>
+body { margin:0; padding:0; }
+#map { position:absolute; top:0; bottom:0; width:100%; }
+							</code></pre>
+				</section>
+				<section>
+					<h3>Persi?<br>nessuna paura!</h3>
+					<p> <a href='./files-step-by-step/index1.txt' target="_blank">QUI</a> un file con il codice relativo scritto fino a questo punto<br>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h1>Step 2 <br> La nostra prima web-map</h1>
+				</section>
+				<section>
+					<p>Definiamo il <code>div</code> "map", cioè la sezione della pagina <a href="http://en.wikipedia.org/wiki/Span_and_div">web</a>, che conterr&#225; la nostra mappa all'interno del <code>&lt;body&gt;</code><br>
+<pre><code class='html'>
+&lt;div id='map'&gt;&lt;/div&gt;
+</code></pre>
+				</section>
+				<section>
+					<p>Con due righe di javascript chiediamo a Leaflet di creare una mappa dentro questo div.<br>
+						Usiamo il tag <code>&lt;script&gt;&lt;/script&gt;</code> per contenere il codice javascript.<br>
+					</p>
+				</section>
+				<section>
+					<pre><code class='javascript'>
+&lt;script &gt;
+//creo una mappa con relativa posizione e zoom iniziali
+var map = L.map('map').setView([41.8933439, 12.4830718], 13);
+
+//aggiungo un layer di sfondo, o Base Layer
+var baseLayer = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+  attribution: 'Map data &amp;copy; &lt;a href="http://openstreetmap.org"&gt;OpenStreetMap&lt;/a&gt; contributors, &lt;a href="http://creativecommons.org/licenses/by-sa/2.0/"&gt;CC-BY-SA&lt;/a&gt;, Imagery © &lt;a href="http:// mapbox.com"&gt;Mapbox&lt;/a&gt;',
+	maxZoom: 18
+}).addTo(map);
+&lt;/script&gt;
+					</code></pre>
+				</section>
+				<section>
+					<a href="./files-step-by-step/index2.txt" target="_blank">
+						<img data-src="./img/step2.png" alt="Step-2"></a>
+				</section>
+
+				<section>
+					<p> <a href='./files-step-by-step/index2.txt' target="_blank">QUI il codice index2.html</a></p>
+				</section>
+			</section>
+
+			<section>
+			<section>
+				<h1>Step 3 <br> Aggiungiamo un marker</h1>
+			</section>
+			<section>
+				<p>
+				Per inserire un punto sulla mappa, Leaflet offre il costruttore:<br>
+				<code>L.marker([lat, lng])</code>.<br>
+				Che ha bisogno di un array di coordinate<br>
+				<code>[Latitudine, Longitudine]</code><br>
+				e dispone di metodi opzionali, come <code>.bindPopup()</code> per visualizzare un pop-up</p>
+			</section>
+			<section>
+				<p>Aggiungiamo quindi il codice:</p>
+<pre><code class='javascript'>
+// Oggetto marker
+var CAEMarker = L.marker([42.63315, 11.43384])
+  .bindPopup('Citt&#225; dell&#180;Altra Economia<br> Maptime!')
+  .openPopup()
+  .addTo(map);
+</code></pre>
+			</section>
+			<section>
+				<a href="./files-step-by-step/index3.txt" target="_blank">
+					<img data-src="./img/step3.png" alt="Step-3"></a>
+			</section>
+
+			<section>
+				<p> <a href='./files-step-by-step/index3.txt' target="_blank">QUI il codice index3.html</a></p>
+			</section>
+		</section>
+		<section>
+			<section>
+				<h1>Step 4 <br> Modificare un' icona</h1>
+			</section>
+			<section>
+				<p>Miglioriamo l'icona di default creando una variabile 'icona' a cui associamo un oggetto con il metodo:<br>
+					<code>L.icon()</code><br>
+					<a href="http://leafletjs.com/examples/custom-icons.html">Per saperne di più</a></p>
+			</section>
+			<section>
+				<pre><code class='javascript'>
+// Icona Marker
+var CAEIcon = L.icon({
+	iconUrl: 'img/cae-marker.png',
+	shadowUrl: 'img/cae-marker-shadow.png',
+	iconSize:     [80, 80], // size of the icon
+	shadowSize:   [80, 80], // size of the shadow
+	iconAnchor:   [0, 0], // point of the icon which will correspond to marker's location
+	shadowAnchor: [0, 0],  // the same for the shadow
+	popupAnchor:  [60, 15] // point from which the popup should open relative to the iconAnchor
+	});
+				</code></pre>
+				<p>La nostra icona ha due proprietà, i campi <code>iconUrl</code> e <code>shadowUrl</code>, che sono gli URL dell'immagine dell'icona e della sua ombra.<br>
+					Le altre proprietà definiscono, invece, le dimensioni.</p>
+			</section>
+			<section>
+			<p>Costruito l'oggetto 'icona', possiamo ricreare il marker, ma questa volta passandogli come parametro opzionale proprio la nostra icona. </p>
+
+			<pre><code>
+var CAEMarker = L.marker([45.448198, 9.222020],
+	{ icon: CAEIcon}) // NOTA: questa opzione non era presente nello step3
+	.bindPopup('Citt&#225; dell'Altra Economia <br> Maptime!')
+	.openPopup()
+	.addTo(map);
+			</code></pre>
+		</section>
+			<section>
+				<a href="./files-step-by-step/index4.txt" target="_blank">
+					<img data-src="./img/step4.png" alt="Step-4"></a>
+			</section>
+			<section>
+				<p> <a href='./files-step-by-step/index4.txt' target="_blank">QUI il codice index4.html</a></p>
+			</section>
+		</section>
+		<section>
+			<section>
+				<h1>Step 5 <br> GeoJSON!</h1>
+			</section>
+			<section>
+				<p>
+				Per aggiungere dati alla mappa web si utilizza il formato <a href="http://geojson.org/">GeoJSON</a>, uno standard ormai diffuso.<br>
+				Esempio di GeoJSON (da <a href="http://geojson.org/">geojson.org</a> ):</p>
+
+				<pre><code>
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [125.6, 10.1]
+},
+"properties": {
+"name": "Dinagat Islands"
+}
+}
+				</code></pre>
+			</section>
+			<section>
+				<p>Esistono vari modi per caricare un GeoJSON, oggi usiamo il metodo proprio di Leaflet.</br>
+					Richiamiamo il file contenente i dati, con un link posto dopo quello per richiamare Leaflet:</p>
+					<pre><code>
+&lt;script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" /&gt;
+&lt;!-- Dati --&gt;
+	&lt;script src="data/fontanelle.js"&gt; &lt;/script&gt;
+				</code></pre>
+			</section>
+			<section>
+				<p>Se aprite il file <a href='./files-step-by-step/data/fontanelle.js' target="_blank"><code>fontanelle.js</code></a>, potete notare che il GeoJSON è stato racchiuso nella variabile <code>fontanelle</code>.<br>
+				In questo modo, è possibile passare tutti i dati come unico parametro alla funzione <code>L.geojson()</code> che costruirà il Feature Layer:</p>
+
+				<pre><code>
+// Dati GeoJSON
+	var fontane = L.geoJson(fontanelle, {
+		pointToLayer : function  (feature, latlng) {
+			lat = feature.geometry.coordinates[0];
+			lng = feature.geometry.coordinates[1];
+			return L.marker([lng,lat]).bindPopup("Andiamo a bere al Bar del Drago Verde!");
+		}
+	}).addTo(map);
+				</code></pre>
+			</section>
+		<section>
+			<p>Nella funzione <code>L.geojson()</code> le singole <code>features</code>, di cui si compone l'insieme di dati, vengono passate a <code>pointToLayer()</code>. Perchè, a differenza di altre geometrie come linee e poligoni, Leaflet per i punti disegna sempre dei marker.</br> <a href="http://leafletjs.com/examples/geojson.html">Per saperne di più</a></p>
+		</section>
+		<section>
+			<a href="./files-step-by-step/index5.txt" target="_blank">
+				<img data-src="./img/step5.png" alt="Step-5"></a>
+		</section>
+		<section>
+			<p> <a href='./files-step-by-step/index5.txt' target="_blank">QUI il codice index5.html</a></p>
+		</section>
+	</section>
+	<section>
+		<section>
+		<h1>Step 6 <br> GeoJSON pt.2</h1>
+		</section>
+		<section>
+			<p>Analogamente a quanto fatto per un singolo marker, per modficare l'aspetto dei nasoni, basta creare una variabile con l'icona che preferite.</p>
+
+			<pre><code>
+// Icona GeoJSON
+var fontanella = L.icon ({
+	iconUrl: 'img/nasone.png',
+	shadowUrl: 'img/nasone-shadow.png',
+	iconSize:     [80, 93], // size of the icon
+	shadowSize:   [80, 93], // size of the shadow
+	iconAnchor:   [0, 0 ], // point of the icon which will correspond to marker's location
+	shadowAnchor: [0, 0],  // the same for the shadow
+	popupAnchor:  [45, 10] // point from which the popup should open relative to the iconAnchor
+});
+			</code></pre>
+		</section>
+		<section>
+			<p>..e  passarla come parametro alla funzione <code>L.marker()</code></p>
+
+			<pre><code>
+// Dati GeoJSON
+var fontane = L.geoJson(fontanelle, {
+	pointToLayer : function  (feature, latlng) {
+	lat = feature.geometry.coordinates[0];
+	lng = feature.geometry.coordinates[1];
+	return L.marker([lng,lat],
+	{icon: fontanella}) // NOTA: questa opzione non era presente prima
+	.bindPopup("Andiamo a bere al Bar del Drago Verde!");
+	}
+	}).addTo(map);
+			</code></pre>
+		</section>
+		<section>
+			<a href="./files-step-by-step/index6.txt" target="_blank">
+				<img data-src="./img/step6.png" alt="Step-6"></a>
+		</section>
+		<section>
+			<p> <a href='./files-step-by-step/index6.txt' target="_blank">QUI il codice index6.html</a></p>
+		</section>
+	</section>
+	<section>
+		<section>
+			<h1>Step 7 <br> Layers Control</h1>
+		</section>
+		<section>
+
+			<p>Dopo aver visualizzato i dati sulla mappa; diamo la possibilità all'utente di poterli accendere e spegnere o di cambiare la base map (Base Layer).<br>
+			Per farlo, aggiungiamo un piccolo menù che controlla visibilità dei Base Layers e Feature Layers.<br>
+			Per far ciò, creiamo nuove variabili a cui associare i layer di sfondo:</p>
+		</section>
+		<section>
+			<pre><code>
+// Mapbox Streets
+//---------------
+var mapboxTilesStreet = L.tileLayer('https://{s}.tiles.mapbox.com/v3/examples.map-i86nkdio/{z}/{x}/{y}.png', {
+	attribution: '&lt;a href="http://www.mapbox.com/about/maps/" target="_blank"&gt;Terms &amp;amp; Feedback&lt;/a&gt;'
+	})
+
+// Mapbox Medieval
+//---------------
+var mapboxTilesMedieval = L.tileLayer('https://{s}.tiles.mapbox.com/v3/spatial.b625e395/{z}/{x}/{y}.png', {
+	attribution: '&lt;a href="http://www.mapbox.com/about/maps/" target="_blank"&gt;Terms &amp;amp; Feedback&lt;/a&gt;'
+	});
+			</code></pre>
+			<p><bold>N.B.</bold> per questi due layer non abbiamo usato il metodo <code>.addTo(map)</code> per aggiungerli al <code>&lt;div id='map'&gt;</code><br>
+				questo perchè vogliamo dare la possibilità di accenderli solo in un secondo momento, e uno alla volta, grazie al menù.</p>
+		</section>
+		<section>
+			<p>Per questo, costruiamo due oggetti in cui salvare i riferimenti ai BaseLayers ed ai FeatureLayers, e che passeremo poi alla funzione <code>L.control.layers()</code> per la creazione del menù.</p>
+
+			<pre><code>
+// Creo due oggetti con i riferimenti rispettivamente ai BaseLayers ed ai FeatureLayers
+	var baseMaps={
+		"Sfondo OSM": baseLayer,
+		"Sfondo Mapbox Streets": mapboxTilesStreet,
+		"Sfondo Mapbox Medieval": mapboxTilesMedieval
+	};
+	var featureLayers={
+		"Nasoni": fontane,
+		"CAE" : openDotMarker
+	};
+// Creo i controlli
+	L.control.layers(baseMaps, featureLayers).addTo(map);
+			</code></pre>
+		</section>
+		<section>
+			<a href="./files-step-by-step/index7.txt" target="_blank">
+				<img data-src="./img/step7.png" alt="Step-7"></a>
+		</section>
+		<section>
+			<p> <a href='./files-step-by-step/index7.txt' target="_blank">QUI il codice index7.html</a></p>
+		</section>
+
+	</section>
+
+	<section>
+		<section>
+		<h1>Step 8 <br> Plugins: Marker Cluster</h1>
+		</section>
+		<section>
+			<p>Altro grande vantaggio di Leaflet sono gli innumerevoli plugins sviluppati dalla comunità.<br>
+
+			Ad esempio, vediamo come installare ed utilizzare il plugin <a href="https://github.com/Leaflet/Leaflet.markercluster">MarkerClusterer</a> che aggrega le fontanelle in cluster, al variare del livello di zoom.</p>
+		</section>
+		<section>
+			<p>Come prima cosa aggiungiamo il link della libreria <code>leaflet.markercluster</code> alla pagina, come qualsiasi altro script js:</p>
+
+
+			<pre><code>
+&lt;script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" /&gt;
+&lt;!-- leaflet.markercluster --&gt;
+&lt;link rel="stylesheet" href="js/leaflet.markercluster/MarkerCluster.css" /&gt;
+&lt;link rel="stylesheet" href="js/leaflet.markercluster/MarkerCluster.Default.css" /&gt;
+&lt;script src="js/leaflet.markercluster/leaflet.markercluster-src.js" &gt;&lt;/script&gt;
+&lt;script src="js/leaflet.markercluster/leaflet.markercluster.js" &gt;&lt;/script&gt;
+&lt;!-- Dati --&gt;
+&lt;script src="data/fontanelle.js"&gt; &lt;/script&gt;
+			</code></pre>
+		</section>
+		<section>
+			<p>Poi, seguendo la <a href="https://github.com/Leaflet/Leaflet.markercluster">documentazione</a>, creiamo un nuovo oggetto <code>MarkerClusterGroup</code>, a cui passiamo le features del layer <code>fontane</code> e aggiungiamolo alla mappa.</p>
+
+			<pre><code>
+var markers = new L.MarkerClusterGroup();
+	markers.addLayer(fontane);
+//... Add more layers ...
+map.addLayer(markers);
+			</code></pre>
+		</section>
+		<section>
+			<p>Attenzione! L'ultimo passaggio è ora togliere il metodo <code>addTo(map)</code> da <code>L.geojson(fontane)</code>, altrimenti finirei con il caricare due volte lo stesso layer (uno all'inzio uso il GeoJSON per creare il layer di fontanelle, ed uno ora tramite markerClusterer)</p>
+</section>
+
+	<section>
+		<a href="./files-step-by-step/index8.txt" target="_blank">
+			<img data-src="./img/step8.png" alt="Step-8"></a>
+	</section>
+	<section>
+		<p> <a href='./files-step-by-step/index8.txt' target="_blank">QUI il codice index8.html</a></p>
+	</section>
+
+</section>
+
+<section data-background="./img/fine.gif">
+</section>
+
+
+
+
+</div>
+
+	</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
+
+		// Full list of configuration options available at:
+		// https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
+
+			transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+			// Optional reveal.js plugins
+			dependencies: [
+				{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+				{ src: 'plugin/zoom-js/zoom.js', async: true },
+				{ src: 'plugin/notes/notes.js', async: true }
+			]
+		});
+
+	</script>
+
+</body>
+</html>
